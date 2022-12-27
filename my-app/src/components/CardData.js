@@ -9,6 +9,7 @@ function CardData(props) {
         setNumOfLikes(numOfLikes+1)
         props.incrementtotal();
     } 
+    
 
     return (
         <>
