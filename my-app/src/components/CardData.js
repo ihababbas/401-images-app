@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
@@ -16,7 +16,7 @@ function CardData(props) {
              
         <Col>
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={props.img} />
+        <Card.Img variant="top" src={props.img} onClick={incrementNumOfLikes} />
             <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>
@@ -24,7 +24,7 @@ function CardData(props) {
                     <p>Num of Likes: {numOfLikes}</p>
 
                     </Card.Text>
-                    <Button variant="primary" onClick={incrementNumOfLikes}>like IT!</Button>
+                   
                 </Card.Body>
             </Card>
             </Col>
