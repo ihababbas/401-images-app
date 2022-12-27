@@ -1,24 +1,55 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CardData from './components/CardData.js'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import data from './data.json';
+import Header from './header';
+import Footer from './footer'
+import Row from 'react-bootstrap/Row';
 
 function App() {
+  let [total, settotal] = useState(0);
+
+    const incrementtotal = () => {
+      settotal(total+1)
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Header />
+     <h2>Total Num of Likes : {total}</h2>
+      <Row>
+      <Router>
+          <Routes>
+            <Route 
+              
+              exact path="/"
+              
+              element={ 
+               
+                data.map((element) => (
+                <CardData
+                id = {element._id}
+                title = {element.title}
+                img = {element.image_url}
+                incrementtotal = {incrementtotal}  
+                   
+                 />
+            ))}
+                
+               
+            >
+            </Route>
+          </Routes>
+        </Router>
+        </Row>
+        <Footer/>
+    </>
   );
 }
 
