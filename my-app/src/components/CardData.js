@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +9,7 @@ function CardData(props) {
         setNumOfLikes(numOfLikes+1)
         props.incrementtotal();
     } 
+    
 
     return (
         <>
