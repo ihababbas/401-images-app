@@ -2,7 +2,7 @@ import Row from 'react-bootstrap/Row';
 import React, {useState} from 'react';
 
 
-import data from '/home/ihababbas/lab31/my-app/src/data.json';
+import data from './data.json';
 import CardData from './CardData';
 function Parent() {
   let [total, settotal] = useState(0);
